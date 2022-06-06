@@ -66,17 +66,17 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 | Npm Script | Description |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
 | `start`                   | Runs full build and runs node on dist/index.js. Can be invoked with `npm start`                  |
-| `dev`                   | Runs full build before starting all watch tasks. Can be invoked with `npm dev`                                         |
-| `test`                    | Runs build and run tests using mocha        |
-| `lint`                    | Runs TSLint on project files       |
-| `lint:fix`                    | Runs TSLint on project files fixing issues       |
+| `dev`                   | Runs full build before starting all watch tasks. Can be invoked with `npm run dev`                                         |
+| `test`                    | Runs build and run tests using jest . Can be invoked with `npm test`          |
+| `lint`                    | Runs TSLint on project files  . Can be invoked with `npm run lint`        |
+| `lint:fix`                    | Runs TSLint on project files fixing issues  . Can be invoked with `npm run lint:fix`      |
 
 
 # TSLint
 TSLint is a code linter that helps catch minor code quality and style issues.
 
 ## TSLint rules
-All rules are configured through `tslint.json`.
+All rules are configured through `.eslintrc`.
 
 ## Docker
 
