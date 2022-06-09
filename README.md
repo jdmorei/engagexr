@@ -72,17 +72,12 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 | `lint:fix`                    | Runs TSLint on project files fixing issues  . Can be invoked with `npm run lint:fix`      |
 
 
-# TSLint
-TSLint is a code linter that helps catch minor code quality and style issues.
-
-## TSLint rules
+## ESLint rules
 All rules are configured through `.eslintrc`.
 
 ## Docker
 
-Not finished.
-
-By default, the API will expose port 8000
+By default, the API will expose port 3000
 
 ```
 docker-composer up -d
