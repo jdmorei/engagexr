@@ -9,22 +9,14 @@ services:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: mysqlpw
       MYSQL_DATABASE: engagexr
-      MYSQL_ALLOW_EMPTY_PASSWORD: yes
-      MYSQL_HOST_IP: mysql
     ports:
       - '3306:3306'
     networks:
       - backend
-  proxy:
-    image: nginx:alpine
-    container_name: proxy
-    ports:
-      - '8000:80'
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    restart: 'unless-stopped'
-    networks:
-      - backend
+    healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 10
   server:
     build:
       context: ./
@@ -42,7 +34,8 @@ services:
     links:
       - mysql
     depends_on:
-      - mysql
+            mysql:
+                condition: service_healthy
 
 
 networks:
