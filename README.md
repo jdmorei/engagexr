@@ -80,9 +80,7 @@ All rules are configured through `.eslintrc`.
 
 ## Docker
 
-Not finished.
-
-By default, the API will expose port 8000
+By default, the API will expose port 3000
 
 ```
 docker-composer up -d
